@@ -1,0 +1,367 @@
+<html>
+<head>
+
+  <title>Bright Future E- School System</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  
+  <link rel="stylesheet" type="text/css" href="tcal.css" />
+<script type="text/javascript" src="tcal.js"></script> 
+  
+  <script type="text/javascript">
+  // validate Username
+  function validateUserName(){
+  
+    if(document.getElementById("user_name").value == "" || document.getElementById("user_name").value == null || document.getElementById("user_name").value == "User-Name"){   
+    alert("Please Enter User name");
+	document.registration.user_name.focus();
+	return false;
+  }
+  }
+  </script>
+  
+  
+  
+  <script  type="text/javascript">
+  //Validate Sate
+    function validateState(){
+		var format =  /^[A-Za-z ]{1,}$/;//text
+if(document.getElementById("state").value == "" || document.getElementById("state").value == null){
+
+return true;
+}else if(document.getElementById("state").value.match(format)){
+//document.addnewstudent.studentname.focus();
+return true;
+}else{
+alert("Please Sate of Origin Should be Only Letters e.g ADAMAWA \n BAUCHI OR GOMBE  E.T.C");
+document.getElementById("state").value = "";
+document.registration.state.focus();
+return false;
+}
+} 
+ </script>
+ 
+<script type="text/javascript">
+// validate phone Number
+
+function validatePhoneNumber(){
+   var format =  /^[0-9]{1,}$/;//text
+if(document.getElementById("phone").value == "" || document.getElementById("phone").value == null ){
+
+return true;
+}else if(document.getElementById("phone").value.match(format)){
+//document.addnewstudent.studentname.focus();
+return true;
+}else{
+alert("Please Phone Number Should be Only Numbers e.g 08052127352 E.T.C");
+document.getElementById("phone").value = ""
+document.registration.phone.focus();
+return false;
+}
+}
+
+</script>
+ 
+ <script type="text/javascript">
+ // Validate Name
+ function validateName(){
+var format =  /^[A-Za-z ]{1,}$/;//text
+if(document.getElementById("name").value == "" || document.getElementById("name").value == null){
+return true;
+}else if(document.getElementById("name").value.match(format)){
+//document.addnewstudent.studentname.focus();
+return true;
+}else{
+alert("Please Customer Name Should be Only Letters e.g IBRAHIM D \n LANTI GANYE OR IBRAHIM KABIRU IDRIS E.T.C");
+document.getElementById("name").value = "";
+document.registration.name.focus();
+return false;
+}
+}
+ 
+ </script>
+ 
+</head>
+  <style type="text/css">
+<!--
+.style14 {font-size: 36px}
+.style17 {
+	font-size: 24px;
+	color: #FF0000;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+}
+.style18 {
+	font-weight: bold;
+	color: #000066;
+	font-family: "Times New Roman", Times, serif;
+}
+.style19 {color: #993300}
+.style20 {color: #336600}
+.style22 {
+	font-size: 18px;
+	color: #006600;
+	font-family: "Times New Roman", Times, serif;
+}
+.style36 {
+	color: #000066;
+	font-size: 18px;
+}
+.style37 {
+	font-size: 16px;
+	font-weight: bold;
+}
+-->
+  </style>
+  
+<body background="images/1.gif">
+<div id="wrapper">
+      <h1 align="center"><span class="style14"><span class="style18">BRIGHT <span class="style19">FUTURE</span> <span class="style20">SCHOOLS</span></span></span></h1>
+      <p align="center" class="style17"><blink>ADMINISTRATOR'S PANEL</blink> </p>
+      <marquee direction="left" loop="-1">
+      <div align="center" class="style22">Be warned! Only Authorized Persons are Allowered to Access this Section</div>
+      </marquee>
+<center>
+<table  border="1" style="border-collapse:collapse ">
+
+  <form action="Registrationfinish.php" method="post" id="registration" name="registration">  
+  
+  <tr><td>						  
+<span class="style2">Employee ID-Number </span></td>
+<td>
+<input class="form-control" placeholder="Emp ID-Number" name="registration_no"  id="registration_no" type="text" size="50" autofocus onKeyUp="validatePhoneNumber()"/></td></tr>
+                      
+  <tr><td>                       
+  <span class="style2">User name</span></td>
+  <td> 
+  <input class="form-control"  name="user_name" id= "user_name" placeholder="User-Name" type="text"  size="50" onKeyUp="validateUserName()" /> </td></tr>                              
+  <tr><td>                         
+  <span class="style2">User E-Mail</span> </td>
+ <td>
+  <input class="form-control" placeholder="E-mail" name="email" id="email" type="email" autofocus size="50"/> </td></tr>
+  <tr><td>                             
+                             
+  <span class="style2">Password</span></td>
+  <td>
+<input class="form-control" placeholder="Password" name="pass"  id="pass" type="password" size="50"/ ></td></tr>
+<tr><td>						  
+<span class="style2">State of Origin</span></td>
+<td> 
+<input class="form-control" placeholder="State" name="state"  id="state" type="text" size="50" onKeyUp="validateState()"/> </td></tr>
+<tr><td>
+<span class="style2">Address</span> </td>
+<td>
+<input type"text" name="address" id="address"  placeholder="Address" size="50"/></td></tr>
+
+<tr><td>						  
+<span class="style2">Phone Number</span></td>
+<td>
+<input class="form-control" placeholder="Phone-Number" name="phone"  id="phone" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>  
+<span class="style2">Full Name</span></td>
+<td>
+<input class="form-control"  name="name" type="text" id="name" placeholder="Full-Name" size="50" onKeyUp="validateName()"/></td></tr>
+
+
+<tr>
+  <td><span class="style2">Date of Birth</font></td>
+        
+<td>
+<input type="text"  name="DOB" id="DOB" class="tcal" />
+    </td>
+</tr>
+
+<tr><td>						  
+<span class="style2">Place of Birth</span></td>
+<td>
+<input class="form-control" placeholder="Place-of-Birth" name="place_of_birth"  id="place_of_birth" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Gender</span></td>
+<td>
+<input class="form-control" placeholder="Gender" name="gender"  id="gender" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">L.G.A</span></td>
+<td>
+<input class="form-control" placeholder="Local-Government" name="lga"  id="lga" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Languages</span></td>
+<td>
+<input class="form-control" placeholder="Languages" name="languages"  id="languages" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Religion</span></td>
+<td>
+<input class="form-control" placeholder="Religion" name="religion"  id="religion" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Nationality</span></td>
+<td>
+<input class="form-control" placeholder="Nationality" name="nationality"  id="nationality" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Country of Residence</span></td>
+<td>
+<input class="form-control" placeholder="Country-of-Residence" name="country_of_residence"  id="country_of_residence" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Qualification</span></td>
+<td>
+<input class="form-control" placeholder="Qualification" name="qualification"  id="qualification" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+
+<tr><td>						  
+<span class="style2">Years of Experience</span></td>
+<td>
+<input class="form-control" placeholder="Years-of-Experience" name="years_of_experience"  id="years_of_experience" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Starting Salary</span></td>
+<td>
+<input class="form-control" placeholder="Starting-Salary" name="starting_salary"  id="starting_salary" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+<tr><td>						  
+<span class="style2">Present Salary</span></td>
+<td>
+<input class="form-control" placeholder="Present-Salary" name="present_salary"  id="present_salary" type="text" size="50" onKeyUp="validatePhoneNumber()"/></td></tr>
+
+
+
+<span class="style36">ADD CLASS LOAD(S) </span></span>
+<table border="1" background="images/1.gif">
+
+<tr>
+ <td>
+   Select Subjects	<br>
+   <select name="subject1" id="subject1">
+	        <option >Select Subject Please</option>
+            <option value="1">English Language</option>
+		    <option value="2">Mathematics</option>
+		    <option value="3">Business Studies</option>
+		    <option value="4">French</option>
+			<option value="5">Basic Science</option>
+		    <option value="6">Social Studies</option>
+			<option value="7">Agric Science</option>
+			<option value="8">Basic Technology</option>
+		    <option value="9">Literature in English</option> 
+			<option value="10">CRS</option> 
+			<option value="11">IRS</option> 
+			<option value="12">Hausa</option>
+		    <option value="13">Computer Science</option>
+			<option value="14">Music</option>
+			<option value="15">Creative Art</option>
+			<option value="16">Computer Studies</option>
+		    <option value="17">Civic Education</option> 
+			<option value="18">Trade</option> 
+			<option value="19">Biology</option> 
+			<option value="20">Physics</option>
+		    <option value="21">Chemistry</option>
+			<option value="22">Further Mathematics</option>
+			<option value="23">Physical Education</option>
+		    <option value="24">Health Education</option> 	
+			<option value="25">Animal Husbandry</option>
+		    <option value="26">Igbo</option>
+			<option value="27">Yoruba</option>
+			<option value="28">Government</option>
+		    <option value="29">Geography</option> 
+			<option value="30">Visual Art</option>
+		    <option value="31">History</option>
+			<option value="32">Economics</option>
+			<option value="33">Accounting</option>
+		    <option value="34">Store Management</option> 
+			<option value="35">Insurance</option>
+		    <option value="36">Commerce</option>
+			<option value="37">Office Practice</option> 	
+      </select>
+	  &nbsp;
+	  <select name="subject2" id ="subject2">
+	       <option >Select Subject Please</option>
+            <option value="1">English Language</option>
+		    <option value="2">Mathematics</option>
+		    <option value="3">Business Studies</option>
+		    <option value="4">French</option>
+			<option value="5">Basic Science</option>
+		    <option value="6">Social Studies</option>
+			<option value="7">Agric Science</option>
+			<option value="8">Basic Technology</option>
+		    <option value="9">Literature in English</option> 
+			<option value="10">CRS</option> 
+			<option value="11">IRS</option> 
+			<option value="12">Hausa</option>
+		    <option value="13">Computer Science</option>
+			<option value="14">Music</option>
+			<option value="15">Creative Art</option>
+			<option value="16">Computer Studies</option>
+		    <option value="17">Civic Education</option> 
+			<option value="18">Trade</option> 
+			<option value="19">Biology</option> 
+			<option value="20">Physics</option>
+		    <option value="21">Chemistry</option>
+			<option value="22">Further Mathematics</option>
+			<option value="23">Physical Education</option>
+		    <option value="24">Health Education</option> 	
+			<option value="25">Animal Husbandry</option>
+		    <option value="26">Igbo</option>
+			<option value="27">Yoruba</option>
+			<option value="28">Government</option>
+		    <option value="29">Geography</option> 
+			<option value="30">Visual Art</option>
+		    <option value="31">History</option>
+			<option value="32">Economics</option>
+			<option value="33">Accounting</option>
+		    <option value="34">Store Management</option> 
+			<option value="35">Insurance</option>
+		    <option value="36">Commerce</option>
+			<option value="37">Office Practice</option> 	
+				
+      </select>
+	  
+	  &nbsp;
+	  <select name="subject3" id ="subject3">
+	      <option >Select Subject Please</option>
+            <option value="1">English Language</option>
+		    <option value="2">Mathematics</option>
+		    <option value="3">Business Studies</option>
+		    <option value="4">French</option>
+			<option value="5">Basic Science</option>
+		    <option value="6">Social Studies</option>
+			<option value="7">Agric Science</option>
+			<option value="8">Basic Technology</option>
+		    <option value="9">Literature in English</option> 
+			<option value="10">CRS</option> 
+			<option value="11">IRS</option> 
+			<option value="12">Hausa</option>
+		    <option value="13">Computer Science</option>
+			<option value="14">Music</option>
+			<option value="15">Creative Art</option>
+			<option value="16">Computer Studies</option>
+		    <option value="17">Civic Education</option> 
+			<option value="18">Trade</option> 
+			<option value="19">Biology</option> 
+			<option value="20">Physics</option>
+		    <option value="21">Chemistry</option>
+			<option value="22">Further Mathematics</option>
+			<option value="23">Physical Education</option>
+		    <option value="24">Health Education</option> 	
+			<option value="25">Animal Husbandry</option>
+		    <option value="26">Igbo</option>
+			<option value="27">Yoruba</option>
+			<option value="28">Government</option>
+		    <option value="29">Geography</option> 
+			<option value="30">Visual Art</option>
+		    <option value="31">History</option>
+			<option value="32">Economics</option>
+			<option value="33">Accounting</option>
+		    <option value="34">Store Management</option> 
+			<option value="35">Insurance</option>
+		    <option value="36">Commerce</option>
+			<option value="37">Office Practice</option> 	
+      </select></td>
+	  
+    </tr>
+</table>
+</br></br>
+						  
+<input type="submit" value=" CLICK TO REGISTER STAFF" / >
+</form>
+
+<center>
+<hr color="red" size="8"><br><a href="Admin.php"> <img src="images/backred.png"></a><br>
+</center>
+  
+</center>  
+</div><!-- end wrapper -->                               
+</body>
+</html>
